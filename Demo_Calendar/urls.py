@@ -18,7 +18,7 @@ from django.urls import include, path
 
 urlpatterns = [
     # path('Calendar_Component/', include('Calendar_Component.urls')),
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('', include('allauth.urls')),
     path('', include('cal.urls')),
 ]
