@@ -91,6 +91,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 
 # page transition after login / logout
 LOGIN_REDIRECT_URL = 'cal:calendar'
+LOGOUT_REDIRECT_URL = '/login'
 ACCOUNT_LOGOUT_REDIRECT_URL = ''
 
 # configuration of logout

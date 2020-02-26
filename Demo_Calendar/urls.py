@@ -15,10 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf import settings
+from django.contrib.auth import views as auth_views
+from accounts import views as accounts_views
+
 
 urlpatterns = [
     # path('Calendar_Component/', include('Calendar_Component.urls')),
     path('admin/', admin.site.urls),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    # path('login/', auth_views.LoginView.as_view(), name='login'),
     path('', include('allauth.urls')),
     path('', include('cal.urls')),
 ]
