@@ -1,0 +1,22 @@
+{% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'Calendar_Component/style.css'%}"
+/>
+
+<h1>All your questions</h1>
+{% if latest_question_list %}
+<ul>
+  {% for question in latest_question_list %}
+  <li>
+    <!-- searching specified name in Calendar_Component.urls module -->
+    <a href="{% url 'Calendar_Component:detail' question.id %}"
+      >{{question.question_text}}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}

@@ -1,0 +1,23 @@
+<h1>{{question.question_text}}</h1>
+
+<!-- error handling -->
+{% if error_message %}
+<p><strong>{{error_message}}</strong></p>
+{% endif %}
+
+<form action="{% url 'Calendar_Component:vote' question.id %}" method="post">
+  <!-- {% csrf_token%} is protecting from Cross Site Request Forgeries(if the post target at internal URLs, you can use below tag) -->
+  {% csrf_token%} 
+  {% for choice in question.choice_set.all %}
+  <input
+    type="radio"
+    name="choice"
+    id="choice{{forloop.counter}}"
+    value="{{choice.id}}"
+  />
+  <label for="choice{{choice.id}}">
+    {{choice.choice_text}} </label
+  ><br />
+  {% endfor %}
+  <input type="submit" value="Vote" />
+</form>
