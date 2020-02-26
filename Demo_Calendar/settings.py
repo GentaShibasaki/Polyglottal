@@ -49,12 +49,16 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'Calendar_Component.apps.CalendarComponentConfig',
     'cal.apps.CalConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +71,30 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+# authentic configuration
+AUTH_USER_MODEL = 'accounts.CustomUser'
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# authentication of mail address
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USERNAME_REQUIRED = False
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# confirmation of mail authentication
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_REQUIRED = True
+
+# page transition after login / logout
+LOGIN_REDIRECT_URL = 'cal:calendar'
+ACCOUNT_LOGOUT_REDIRECT_URL = ''
+
+# configuration of logout
+ACCOUNT_LOGOUT_ON_SET = True
 
 ROOT_URLCONF = 'Demo_Calendar.urls'
 

@@ -1,0 +1,28 @@
+{% block contents %}
+<div class="container">
+  <div class="row">
+    <div class="my-div-style">
+      <h1>Register Confirmation</h1>
+
+      {% if confirmation%}
+      <p>
+        if you want to finish registering this information, please put the
+        button below
+      </p>
+
+      <form
+        method="post"
+        action="{% url 'account_confirm_email' confirmation.key %}"
+      >
+        {% csrf_token %}
+        <button class="btn" type="submit">Confirm</button>
+      </form>
+
+      {% else %} {% url 'account_email' as email_url %}
+
+      <p>link is expired <a href="{{email_url}}">re-register</a></p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

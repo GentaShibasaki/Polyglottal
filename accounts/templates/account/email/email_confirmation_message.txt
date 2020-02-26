@@ -1,0 +1,3 @@
+Thank you for your registration
+To continue your registration, please click a link below
+{{active_url}}
