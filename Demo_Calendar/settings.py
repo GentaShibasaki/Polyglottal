@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'Calendar_Component.apps.CalendarComponentConfig',
     'cal.apps.CalConfig',
     'accounts.apps.AccountsConfig',
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
