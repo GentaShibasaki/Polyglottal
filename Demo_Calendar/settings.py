@@ -104,6 +104,8 @@ WSGI_APPLICATION = 'Demo_Calendar.wsgi.application'
 
 # CSS
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
