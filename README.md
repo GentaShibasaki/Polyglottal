@@ -8,7 +8,7 @@ https://gentashibasaki-calendardemo.herokuapp.com/
 
 ## future features
 
-- I'd like to make it look prettier! Because in terms of login/signup page are not pretty!
+- I'd like to make some pages look prettier! Because in terms of login/register page are not pretty!
 - I'd like to add Group feature! If you create or join Group, only group members are able to see plans among members!
 - I'd like to add Notification feature! I think this app notify users their plans by e-mail or something!
 - I'd like to add Image and Movie upload feature! To share your memory or show detailed image of your plan/event with your members!
