@@ -1,29 +1,24 @@
-{% extends 'cal/base.html' %} {% block content %}
+{% extends 'cal/base.html' %} {% block contents %}
 <div class="clearfix" style="text-align: center;">
   <a
     class="btn btn-info"
     href="{% url 'cal:calendar' %}?{{prev_month}}"
-    style="width:20%; margin:3px;"
+    style="width:20%; margin:3px; float: left;"
     >Previous Month</a
   >
   <a
-    class="btn btn-info"
+    class="btn btn-primary rounded-pill"
     href="{% url 'cal:event_new' %}"
-    style="width:20%; margin:3px;"
+    style="width:25%; margin:3px; float: center;"
   >
     New Event
   </a>
   <a
     class="btn btn-info"
     href="{% url 'cal:calendar' %}?{{next_month}}"
-    style="width:20%; margin:3px;"
+    style="width:20%; margin:3px;  float: right;"
     >Next Month</a
   >
-  <a
-    class="btn btn-info"
-    href="{% url 'logout' %}"
-    style="width:20%; margin:3px;"
-    >logout</a
-  >
 </div>
+
 {{ calendar }} {% endblock %}

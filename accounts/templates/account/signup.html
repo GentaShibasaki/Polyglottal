@@ -1,7 +1,9 @@
+{% extends 'account/base.html' %}
 {% block contents%}
 <div class="container">
   <div class="row">
     <div class="my-div-style">
+      <br />
       <h1>Register</h1>
       <form method="post" action="{% url 'account_signup' %}">
         {% csrf_token %} {{form.as_p}} {% if redirect_field_value %}
@@ -11,7 +13,7 @@
           value="{{redirect_field_value}}"
         />
         {% endif %}
-        <button class="btn" type="submit">register</button>
+        <button class="btn btn-success btn-lg" type="submit">register</button>
       </form>
 
       <p>

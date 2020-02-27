@@ -1,4 +1,4 @@
-{% block contents %}
+{% extends 'account/base.html' %} {% load static %} {% block contents %}
 <div class="container">
   <div class="row">
     <div class="my-div-style">
@@ -12,9 +12,14 @@
         />
         {% endif %}
 
-        <button class="btn" type="sibmit">log in</button>
+        <button class="btn btn-success btn-lg" type="submit">
+          log in
+        </button>
         <p>
-          <a class="button secondaryAction" href="{% url 'account_reset_password'%}">
+          <a
+            class="button secondaryAction"
+            href="{% url 'account_reset_password'%}"
+          >
             Do you forget your password?
           </a>
         </p>

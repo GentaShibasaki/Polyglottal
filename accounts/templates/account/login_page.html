@@ -1,8 +1,28 @@
-{% block contents%}
-<div class="container">
+{% extends 'account/base.html' %} {% load static %} {% block header %}
+
+<header class="masthead text-center">
+  <div class="masthead-content">
+    <div class="container">
+      <h1 class="masthead-heading mb-0" style="color:white">
+        Start your calendar
+      </h1>
+      <br />
+      <a
+        href="{% url 'account_login'%}"
+        class="btn btn-success btn-xl rounded-pill"
+      >
+        Login
+      </a>
+    </div>
+  </div>
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+</header>
+<!-- <div class="container">
   <div class="row">
     <div class="my-div-style">
-      <h1>Hi!</h1>
 
       <p>
         <a class="button secondaryAction" href="{% url 'account_login'%}">
@@ -11,5 +31,5 @@
       </p>
     </div>
   </div>
-</div>
-{% endblock %}
+</div> -->
+{% endblock %} {% block contents %} {% endblock %}
