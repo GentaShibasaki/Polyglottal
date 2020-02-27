@@ -5,4 +5,5 @@ from django.shortcuts import render, get_object_or_404
 
 
 def signup(request):
-    return render(request, 'registration/signup.html')
+    tmplate_name = 'account/login_page.html'
+    return render(request, tmplate_name)
